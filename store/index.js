@@ -26,7 +26,9 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    // First, it checks if there are any apples in the tree. If there are, it loops through the array of apples and sets each one’s falling property to true. Then, it uses setTimeout to call the function that adds the apples to the basket.
+    /* First, it checks if there are any apples in the tree.
+    If there are, it loops through the array of apples and sets each one’s falling property to true.
+    Then, it uses setTimeout to call the function that adds the apples to the basket. */
     dropApples(state, payload) {
       if (state.applesInTree.length !== 0) {
         for (let i = 0; i < payload; i++) {
@@ -36,7 +38,9 @@ export default new Vuex.Store({
       }
     },
 
-    // It checks to see if there are any apples in the tree. If there are, it sets the treeShaking property to true. It sets a timeout of 3000 milliseconds (3 seconds) to set the treeShaking property back to false.
+    /* It checks to see if there are any apples in the tree.
+    If there are, it sets the treeShaking property to true.
+    It sets a timeout of 3000 milliseconds (3 seconds) to set the treeShaking property back to false. */
     shakeTree(state) {
       if (state.applesInTree.length !== 0) {
         state.treeShaking = true;
@@ -46,7 +50,10 @@ export default new Vuex.Store({
   },
 
   actions: {
-    // If the number of apples in the tree is not zero, then commit the “shakeTree” mutation. Then, set a timeout of 3000 milliseconds (3 seconds) to commit the “dropApples” mutation. The “dropApples” mutation will randomly drop between 1 and 6 apples from the tree. If there are no apples in the tree, the apples in the basket are moved to the tree.
+    /* If the number of apples in the tree is not zero, then commit the “shakeTree” mutation.
+    Then, set a timeout of 3000 milliseconds (3 seconds) to commit the “dropApples” mutation.
+    The “dropApples” mutation will randomly drop between 1 and 6 apples from the tree.
+    If there are no apples in the tree, the apples in the basket are moved to the tree. */
     chooseApples({ commit }) {
       if (this.state.applesInTree.length !== 0) {
         commit('shakeTree');
