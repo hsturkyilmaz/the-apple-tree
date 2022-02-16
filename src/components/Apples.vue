@@ -21,7 +21,6 @@ export default {
 
   computed: {
     applesInTree: () => store.state.applesInTree ,
-    appleFalling: () => store.state.appleFalling,
   }
 }
 </script>

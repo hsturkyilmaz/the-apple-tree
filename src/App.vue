@@ -23,13 +23,11 @@ export default {
 
   computed: { 
     applesInTree: () => store.state.applesInTree,
-    applesInBasket: () => store.state.applesInBasket,
     treeShaking: () => store.state.treeShaking
   },
 
   methods: {
     chooseApples: () => store.dispatch('chooseApples'),
-    shakeTree: () => store.commit('shakeTree')
   }
 }
 </script>
@@ -59,10 +57,6 @@ export default {
 
 .fix-width {
   width: 200px;
-}
-
-.basket {
-  margin-bottom: -3rem;
 }
 
 .button {
